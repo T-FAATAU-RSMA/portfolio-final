@@ -1,0 +1,207 @@
+
+/* CSS PART index_Admin.php  */
+
+/* Styles CSS TEXTES */
+/* Styles généraux */
+    body {transition:background-color 4s ease; background:linear-gradient(70deg,#FC9DAB,#C586D9,#A5A1F0,#86BAD9,#9DFADB); background-size:auto; background-size:100% 100%; animation:degradeFond 30s ease infinite;}
+    @keyframes degradeFond {
+    0% {background-position:0 50%;}
+    50% {background-position:50% 50%;}
+    100% {background-position:0 50%;}
+    }
+
+/* Réglages du bloc de texte général */
+#wrapper {margin-top:30vh; text-align:center; font-family:'Dancing Script', cursive;}
+#wrapper h1 {white-space:normal; display:inline-block; font-size:6em; font-weight:200; background:linear-gradient(75deg, #E5E0F9,#C5C7DB,#EAEDF3,#C5D2DB,#E0F6F9); color:rgb(187, 243, 174); background-clip:text; -webkit-background-clip:text; position:relative;}
+
+/* Animations des lettres */
+h1 span {opacity:0;}
+.letter01 {animation:letters 3s ease 0000ms forwards;}
+.letter02 {animation:letters 3s ease 0500ms forwards;}
+.letter03 {animation:letters 3s ease 1000ms forwards;}
+.letter04 {animation:letters 3s ease 1500ms forwards;}
+.letter05 {animation:letters 3s ease 2000ms forwards;}
+.letter06 {animation:letters 3s ease 2500ms forwards;}
+.letter07 {}
+.letter08 {animation:letters 3s ease 3000ms forwards;}
+.letter09 {animation:letters 3s ease 3500ms forwards;}
+.letter10 {animation:letters 3s ease 4500ms forwards;}
+.letter11 {animation:letters 3s ease 5000ms forwards;}
+.letter12 {animation:letters 3s ease 5500ms forwards;}
+.letter13 {animation:letters 3s ease 6000ms forwards;}
+.letter14 {animation:letters 3s ease 6500ms forwards;}
+.letter15 {animation:letters 3s ease 7000ms forwards;}
+.letter16 {animation:letters 3s ease 7500ms forwards;}
+@keyframes letters {
+  0% {opacity:0;}
+  100% {opacity:1.0;}
+}
+
+h1::after {content:""; display:block; background:linear-gradient(45deg, #F9CFF3,#D4B6DB,#E5D6F2,#C0B6DB,#CFCFF9); height:3px; width:0%; opacity:0; margin-top:.2em; animation:lineWidth 10s ease-in-out forwards;}
+@keyframes lineWidth {
+  0% {width:0%; opacity:0;}
+  100% {width:100%; opacity:1.0;}
+}
+
+.bcg-import {
+    background-image: url('../img/lion-072718.jpg');
+}
+
+/* CSS PART index.php   */
+
+
+/*  CSS PART FOR ALL PAGE  */
+
+/* CSS NAVBAR  */
+
+.navbar {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+}
+
+.brand-title {
+    font-size: 1.5rem;
+    margin: .5rem;
+}
+
+.navbar-links {
+    height: 100%;
+}
+
+.navbar-links ul {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-links li {
+    list-style: none;
+}
+
+.navbar-links li a {
+    display: block;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+}
+
+.navbar-links li:hover {
+    background-color: #555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: 1.4rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+}
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .toggle-button {
+        display: flex;
+    }
+
+    .navbar-links {
+        display: none;
+        width: 100%;
+    }
+
+    .navbar-links ul {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbar-links ul li {
+        text-align: center;
+    }
+
+    .navbar-links ul li a {
+        padding: .5rem 1rem;
+    }
+
+    .navbar-links.active {
+        display: flex;
+    }
+}
+
+/* CSS FOR TABLE PHP */
+
+
+table {
+    border: medium solid #000000;
+    border-collapse: collapse;
+    width: 50%;
+    }
+    th {
+    font-family: monospace;
+    border: thin solid #000000;
+    width: 50%;
+    padding: 5px;
+    background-color: #ffffff;
+    color: black;
+    }
+    td {
+    font-family: sans-serif;
+    border: thin solid #000000;
+    width: 50%;
+    padding: 5px;
+    text-align: center;
+    background-color: #ffffff;
+    color: black;
+}
+    caption {
+    font-family: sans-serif;
+    }
+
+.content_center {
+    justify-content: center;
+}
+
+/* Media Queries*/
+
+@media screen and (max-width: 600px) {
+  table {
+    border: 0;
+  }
+  table {
+    font-size: 1.3em;
+  }
+  table thead {
+    display: none;
+  }
+  table tr {
+    border: 3px solid ;
+    display: block;
+    background-color: white;
+  }
+  table td {
+    border-bottom: 2px solid ;
+    display: block;
+    text-align: right;
+  }
+  table td:before {
+    content: attr(data-label);
+    float: left;
+    font-weight: bold;
+  }
+}
