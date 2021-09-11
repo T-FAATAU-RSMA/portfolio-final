@@ -5,7 +5,7 @@ include __DIR__."./../database/connexion_bdd.php";
 class dblink {
     
     /**
-     * Delete book selected from "livres"
+     * Delete link selected from "link"
      *
      * @param int $id 
      *
@@ -24,13 +24,13 @@ class dblink {
     /**
      * Description of function 
      *
-     * @return $res_listLivres
+     * @return $res_listlink
      */
     public function getDblink(){
         global $connect_bdd; 
 
-        $req_listlink = "SELECT * from link" ; //$sql : contient la requete sql 
-        $res_listlink = $connect_bdd->query($req_listlink); //$result : execute la requete $sql
+        $req_listlink = "SELECT * from link" ; //$req_listlink : contient la requete sql 
+        $res_listlink = $connect_bdd->query($req_listlink); //$result de listlink : execute la requete $req_listlink
 
         return $res_listlink;
 
@@ -38,11 +38,9 @@ class dblink {
 
         
     /**
-     * create dbshoop into "livres"
+     * create dblink into "link"
      *
      * @param string $nom
-     * @param int $prix
-     *
      */
     public function createDblink($nom,$git,$site){
 
@@ -55,11 +53,9 @@ class dblink {
     
     
     /**
-     * Update DbShoop "livres"
+     * Update Dblink "link"
      *
      * @param string $new_nom 
-     * @param int $new_prix 
-     * @param int $id_livre
      *
      */
     public function updateDblink($new_nom,$new_git,$new_site,$id_link){

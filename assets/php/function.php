@@ -70,7 +70,7 @@ if ($_POST['btn'] == "Supprimer") {
     $id = $_POST['id_link'];
 
     // j"execute ma requête supprimer
-    // dans ma fonction deleteDbShoop
+    // dans ma fonction deleteDblink
     $dblink->deleteDblink($id);
 }
 
@@ -97,9 +97,9 @@ if ($_POST['btn'] == "Valider") {
     // récupérer les valeurs 
     $nom = $_POST['nom']; //Variable $nom contient les données de l'input 'nom'
 
-    $git = $_POST['git']; //Variable $nom contient les données de l'input 'git'
+    $git = $_POST['git']; //Variable $git contient les données de l'input 'git'
 
-    $site = $_POST['site']; //Variable $nom contient les données de l'input 'site'
+    $site = $_POST['site']; //Variable $site contient les données de l'input 'site'
 
     $dblink->createDblink($nom, $git, $site);
 }

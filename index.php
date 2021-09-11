@@ -100,7 +100,7 @@
                                 }
                             ?>
                         </div>
-                        <div class="col">
+                        <div class="col"">
                                 <p>
                                     What is Lorem Ipsum?
                                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
@@ -188,81 +188,80 @@
             <div id="trav" style="color: white;" class="headings">MES TRAVAUX</div>
                 <section id="travaux">
                 <h1 class="headings"></h1>        
-                <div class="ro">
-                    <div class="col-12">           
-                        What is Lorem Ipsum?
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                    <div class="row">
+                        <div class="col-12">           
+                            What is Lorem Ipsum?
+                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 
-                        Why do we use it?
-                        It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
+                            Why do we use it?
+                            It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).
 
 
-                        <br>
-                        Where does it come from?
-                    </div>
-                    <div>
-                    <a href="admin_connect.php">PANNEL ADMINISTRATEUR</a>
-                    </div>
-                    <label>
-                        <u>
-                            <b>LISTE DES PROJETS</b>
-                        </u>
-                    </label>
-
-                    <?php
-                        // CONDITIONS \\
-                        // Afficher la liste des liens
-                        //si $res_listlink contient au moins une données
-                        if ($res_listlink->num_rows > 0) {
-                        //faire ceci
-                        echo "<table>";
-                            echo "<th>";
-                                echo "Nom du projet";
-                            echo "</th>";
-                            echo "<th>";
-                                echo "Liens du Github";
-                            echo "</th>";
-                            echo "<th>";
-                                echo "Liens du Site";
-                            echo "</th>";
-                            foreach ($res_listlink as $valeur) { //Boucle : Pour chaque resultat 
-                            if (($etat == "ouvrir") && ($id_click == $valeur['id'])) {
-                                echo '<form action="index.php" method="post">';
-                                    echo "<input type='hidden' name='id_link' value=" . $valeur['id'] . ">";
+                            <br>
+                            Where does it come from?
+                        </div>
+                        <div><a href="admin_connect.php">PANNEL ADMINISTRATEUR</a></div>
+                        <div class="row">
+                            <label>
+                                <u>
+                                    <b>LISTE DES PROJETS</b>
+                                </u>
+                            </label>
+                            <?php
+                                // CONDITIONS \\
+                                // Afficher la liste des liens
+                                //si $res_listlink contient au moins une données
+                                if ($res_listlink->num_rows > 0) {
+                                //faire ceci
+                                echo "<table>";
+                                    echo "<th>";
+                                        echo "Nom du projet";
+                                    echo "</th>";
+                                    echo "<th>";
+                                        echo "Liens du Github";
+                                    echo "</th>";
+                                    echo "<th>";
+                                        echo "Liens du Site";
+                                    echo "</th>";
+                                    foreach ($res_listlink as $valeur) { //Boucle : Pour chaque resultat 
+                                    if (($etat == "ouvrir") && ($id_click == $valeur['id'])) {
+                                        echo '<form action="index.php" method="post">';
+                                            echo "<input type='hidden' name='id_link' value=" . $valeur['id'] . ">";
+                                                echo "<tr>";
+                                                    echo "<td>";
+                                                        echo "<input type='text' name='new_nom'  value='" . $valeur['nom'] . "'>";
+                                                    echo "</td>";
+                                                    echo "<td>";
+                                                        echo "<input type='text' name='new_git'  value='" . $valeur['git'] . "'>";
+                                                    echo "</td>";
+                                                    echo "<td>";
+                                                        echo "<input type='text' name='new_site'  value='" . $valeur['site'] . "'>";
+                                                    echo "</td>";
+                                                echo "<tr>";
+                                        echo '</form>';
+                                        // -------------------------------------------------------
+                                    } else {
                                         echo "<tr>";
                                             echo "<td>";
-                                                echo "<input type='text' name='new_nom'  value='" . $valeur['nom'] . "'>";
+                                                echo $valeur['nom'];
                                             echo "</td>";
                                             echo "<td>";
-                                                echo "<input type='text' name='new_git'  value='" . $valeur['git'] . "'>";
+                                                echo "<a href='" . $valeur['git'] . "'>" . $valeur['git'] . "</a>";
                                             echo "</td>";
                                             echo "<td>";
-                                                echo "<input type='text' name='new_site'  value='" . $valeur['site'] . "'>";
+                                                echo "<a href='" . $valeur['site'] . "'>" . $valeur['site'] . "</a>";
                                             echo "</td>";
-                                        echo "<tr>";
-                                echo '</form>';
-                                // -------------------------------------------------------
-                            } else {
-                                echo "<tr>";
-                                    echo "<td>";
-                                        echo $valeur['nom'];
-                                    echo "</td>";
-                                    echo "<td>";
-                                        echo "<a href='" . $valeur['git'] . "'>" . $valeur['git'] . "</a>";
-                                    echo "</td>";
-                                    echo "<td>";
-                                        echo "<a href='" . $valeur['site'] . "'>" . $valeur['site'] . "</a>";
-                                    echo "</td>";
-                                echo "</tr>";                
+                                        echo "</tr>";                
+                                    }
+                                }
+                                echo "</table>";
                             }
-                        }
-                        echo "</table>";
-                    }
-                    else { //sinon                               
-                    }
-                    ?>
-                </div>
-            </section>    
+                            else { //sinon                               
+                            }
+                            ?>
+                        </div>    
+                    </div>
+                </section>    
         </section>
         <!-- FOOTER -->
         <div class="footer-dark">

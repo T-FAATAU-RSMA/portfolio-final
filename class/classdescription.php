@@ -8,12 +8,7 @@ class Description
 {
     // Propriété de la class Description
     public $img_description;
-    
-
-
-
-
-    
+      
     /**
      * return description
      *

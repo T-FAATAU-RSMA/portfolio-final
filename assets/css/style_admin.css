@@ -3,16 +3,10 @@
 
 /* Styles CSS TEXTES */
 /* Styles généraux */
-    body {transition:background-color 4s ease; background:linear-gradient(70deg,#FC9DAB,#C586D9,#A5A1F0,#86BAD9,#9DFADB); background-size:auto; background-size:100% 100%; animation:degradeFond 30s ease infinite;}
-    @keyframes degradeFond {
-    0% {background-position:0 50%;}
-    50% {background-position:50% 50%;}
-    100% {background-position:0 50%;}
-    }
 
 /* Réglages du bloc de texte général */
 #wrapper {margin-top:30vh; text-align:center; font-family:'Dancing Script', cursive;}
-#wrapper h1 {white-space:normal; display:inline-block; font-size:6em; font-weight:200; background:linear-gradient(75deg, #E5E0F9,#C5C7DB,#EAEDF3,#C5D2DB,#E0F6F9); color:rgb(187, 243, 174); background-clip:text; -webkit-background-clip:text; position:relative;}
+#wrapper h1 {white-space:normal; display:inline-block; font-size:2em; font-weight:100; background:linear-gradient(75deg, #E5E0F9,#C5C7DB,#EAEDF3,#C5D2DB,#E0F6F9); color:rgb(187, 243, 174); background-clip:text; -webkit-background-clip:text; position:relative;}
 
 /* Animations des lettres */
 h1 span {opacity:0;}
@@ -22,9 +16,9 @@ h1 span {opacity:0;}
 .letter04 {animation:letters 3s ease 1500ms forwards;}
 .letter05 {animation:letters 3s ease 2000ms forwards;}
 .letter06 {animation:letters 3s ease 2500ms forwards;}
-.letter07 {}
-.letter08 {animation:letters 3s ease 3000ms forwards;}
-.letter09 {animation:letters 3s ease 3500ms forwards;}
+.letter07 {animation:letters 3s ease 3000ms forwards;}
+.letter08 {animation:letters 3s ease 3500ms forwards;}
+.letter09 {animation:letters 3s ease 4000ms forwards;}
 .letter10 {animation:letters 3s ease 4500ms forwards;}
 .letter11 {animation:letters 3s ease 5000ms forwards;}
 .letter12 {animation:letters 3s ease 5500ms forwards;}
@@ -179,29 +173,9 @@ table {
 
 /* Media Queries*/
 
-@media screen and (max-width: 600px) {
-  table {
+@media screen and (max-width: 470px) {
+  tbody {
     border: 0;
-  }
-  table {
-    font-size: 1.3em;
-  }
-  table thead {
-    display: none;
-  }
-  table tr {
-    border: 3px solid ;
-    display: block;
-    background-color: white;
-  }
-  table td {
-    border-bottom: 2px solid ;
-    display: block;
-    text-align: right;
-  }
-  table td:before {
-    content: attr(data-label);
-    float: left;
-    font-weight: bold;
-  }
+    font-size: 12px;
+    }
 }

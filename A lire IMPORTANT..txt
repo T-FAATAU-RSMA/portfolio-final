@@ -1,0 +1,16 @@
+A lire :
+Important :
+//Connexion à l'espace Administrateur
+
+Login: admin
+Password : admin1234 
+
+//Fichier de connexion à la base de données
+
+Ouvrir le dossier database / 2 fichier :-connexion.bdd.php
+					-form-imagebdd.php
+
+//Mes requêtes se trouve dans le dossier class
+
+
+//Mes fonction se trouve dans le fichier function.php dans ledossier assets puis php .

@@ -39,9 +39,7 @@
         $res_select = $conn->query($requ_select);
         // faire un retour sur la vue
         return $res_select;
-    }
-
-    
+    }   
 }
 
 

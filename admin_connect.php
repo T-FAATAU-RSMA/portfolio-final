@@ -1,16 +1,16 @@
 <?php
-  // Definition des constantes et variables
+  // Definis les constantes et les variables
   define('LOGIN','admin');
   define('PASSWORD','admin1234');
   $errorMessage = '';
  
-  // Test de l'envoi du formulaire
+  // test l'envoi
   if(!empty($_POST)) 
   {
-    // Les identifiants sont transmis ?
+    // donner les identifiant
     if(!empty($_POST['login']) && !empty($_POST['password'])) 
     {
-      // Sont-ils les mêmes que les constantes ?
+      // est les mêmes constantes
       if($_POST['login'] !== LOGIN) 
       {
         $errorMessage = 'Mauvais login !';
@@ -21,18 +21,18 @@
       }
         else
       {
-        // On ouvre la session
+        // démarre la session
         session_start();
-        // On enregistre le login en session
+        // On enregistre 
         $_SESSION['login'] = LOGIN;
-        // On redirige vers le fichier admin.php
+        // On redirige vers le fichier index_admin.php
         header('Location:index_admin.php');
         exit();
       }
     }
       else
     {
-      $errorMessage = 'Veuillez inscrire vos identifiants svp !';
+      $errorMessage = 'Entrez vos identifiants !';
     }
   }
 ?>
@@ -46,7 +46,7 @@
       <fieldset>
         <legend>Identifiez-vous</legend>
         <?php
-          // Rencontre-t-on une erreur ?
+          // Soucis ?
           if(!empty($errorMessage)) 
           {
             echo '<p>', htmlspecialchars($errorMessage) ,'</p>';
